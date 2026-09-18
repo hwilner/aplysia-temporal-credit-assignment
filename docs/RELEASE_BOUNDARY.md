@@ -2,15 +2,15 @@
 
 ## Purpose
 
-This repository is a public-safe, data-free methods staging tree. Its boundary is designed to make the retained code and documentation understandable without providing research records, downloaded material, or empirical outputs.
+This public repository preserves data-free methods and a concise, qualitative research-status record. The status record reports the completed re-analysis direction and its limitations without distributing research artifacts or numerical outputs.
 
 ## Included material
 
-The public tree may contain data-free source code, synthetic tests, plain-language methods documentation, contribution guidance, and release-boundary tooling. Retained code must operate on caller-provided arrays and must not assume repository-local data or output paths.
+The public tree may contain data-free source code, synthetic tests, plain-language methods documentation, contribution guidance, release-boundary tooling, and a qualitative account of completed research work. Any public outcome statement must be pre-specified in scope, free of numerical values and source-specific operational details, and paired with its material limitations.
 
 ## Excluded material
 
-The public tree must exclude raw or derived data, numerical results, figures and figure specifications, downloads, archives, external source material and metadata, internal indexes, access logs, notebooks, and caches. It also excludes source-specific outcome assertions, readiness assertions, and personal contact details.
+The public tree must exclude raw or derived data, numerical results, pair-level or participant-level results, figures and figure specifications, downloads, archives, external source material and metadata, internal indexes, access logs, notebooks, and caches. It also excludes unsupported causal, mechanistic, exact-replication, or readiness assertions and personal contact details.
 
 ## Automated check
 

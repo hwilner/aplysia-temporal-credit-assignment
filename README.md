@@ -1,20 +1,27 @@
 # Aplysia Temporal Credit Assignment
 
-This independent research repository contains **data-free Python utilities** for exploring temporal credit-assignment methods in an *Aplysia*-inspired setting. It is a scoped methods workspace, not a record of empirical outcomes. It contains no research data, generated outputs, figures, external source material, or claims about biological or experimental findings.
+This independent research repository records a completed deterministic Python re-analysis of temporal credit assignment in *Aplysia* together with the data-free utilities used to make the analysis testable and reviewable.
 
-## Current status
+## Research status
 
-**Public staging:** the repository currently provides a small, deterministic utility layer and synthetic tests. The retained code is suitable for method development and review with synthetic inputs only. No dataset-specific workflow, numerical result, or external-source claim is included. This status note supersedes any earlier outcome-oriented descriptions that may remain in historical version control.
+| Completed work | Outcome |
+|---|---|
+| Deterministic Python non-negative matrix factorization re-analysis | The planned contingent-minus-yoked contrast was directionally negative in most matched pairs and retained that direction in leave-one-pair-out summaries. |
+| Planned component-count and smoothing checks | The timing contrast was not precise or stable enough across these choices to support a robust conclusion. |
+| Descriptive comparison with an archived reference | Preparation-level directional correspondence was broad, but pair-level correspondence was incomplete and the methods were not identical. |
+| Exact reference-workflow execution | Not performed. The project uses a Python route and does not claim an exact rerun or replication. |
 
-## Contents
+**Current conclusion:** the completed re-analysis is **directionally suggestive but inconclusive**. It does not support a strong confirmatory, causal, mechanistic, or exact-replication claim.
+
+## What is included
 
 | Path | Contents |
 |---|---|
 | `src/preprocessing.py` | Array-based spike-time conversion and Gaussian smoothing utilities. |
 | `src/factorization.py` | Deterministic matrix preprocessing and component-timing helper functions. |
-| `tests/` | Synthetic, data-free tests for retained utilities. |
+| `tests/` | Synthetic tests for retained utilities. |
 | `tools/check_release_boundary.py` | Tracked-text and tracked-path release-boundary scanner. |
-| `docs/` | Scope, release-boundary, status, and contribution guidance. |
+| `docs/` | Research status, methods scope, deferred directions, and contribution guidance. |
 
 ## Use and validation
 
@@ -29,15 +36,15 @@ The scanner reads tracked files and their text only. It does not inspect, load, 
 
 ## Keywords
 
-*Aplysia*, temporal credit assignment, neural time series, non-negative matrix factorization, preprocessing, reproducible methods, synthetic testing.
+*Aplysia*, temporal credit assignment, neural time series, non-negative matrix factorization, reproducible re-analysis, synthetic testing.
 
 ## Contributing
 
-Contributions are welcome, especially focused improvements to data-free methods, synthetic tests, documentation, and release-boundary safeguards. Please read [Contributing](CONTRIBUTING.md) and the [public documentation](docs/STATUS_AND_PLAN.md) before opening a change.
+Contributions are welcome, especially focused improvements to data-free methods, synthetic tests, documentation, and release-boundary safeguards. Please read [Contributing](CONTRIBUTING.md) and the [research status](docs/STATUS_AND_PLAN.md) before opening a change.
 
 ## Documentation
 
-- [Status and plan](docs/STATUS_AND_PLAN.md)
+- [Research status and plan](docs/STATUS_AND_PLAN.md)
 - [Methods scope](docs/METHODS_SCOPE.md)
 - [Release boundary](docs/RELEASE_BOUNDARY.md)
 - [Deferred and dropped directions](docs/DEFERRED_AND_DROPPED_DIRECTIONS.md)

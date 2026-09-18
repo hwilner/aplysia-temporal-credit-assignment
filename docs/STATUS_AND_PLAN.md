@@ -1,13 +1,21 @@
-# Status and Plan
+# Research Status and Plan
 
-## Current status
+## Answer to the current research question
 
-This is a **public staging** tree for independent, methods-oriented research. It contains data-free utilities and synthetic tests only. It does not contain an empirical workflow, research data, derived outputs, figures, external source material, or numerical findings. This note is the current public status and supersedes earlier outcome-oriented statements that may remain in historical version control.
+The completed deterministic Python re-analysis found a **directionally negative** contingent-minus-yoked timing pattern in most matched pairs. This direction persisted when one pair was omitted at a time. The evidence is nevertheless **inconclusive** because the estimated contrast was imprecise and changed materially across the planned component-count and smoothing checks.
 
-## Near-term plan
+## Completed work
 
-The next appropriate work is review of the retained utility interfaces, expansion of synthetic edge-case coverage, and maintenance of the release boundary. Any future expansion should first establish a public-safe scope, a data-handling decision, and a contribution review path. It should not imply readiness for external dissemination or make an empirical claim.
+The project completed its fixed Python re-analysis route, matched-pair summary, component-count sensitivity check, smoothing sensitivity check, leave-one-pair-out assessment, component-selection audit, and descriptive comparison with an archived reference. The selected components consistently showed positive retraction association under the prescribed rule. That validates use of the selection rule within each fit; it does not establish that independently fitted components are identical.
 
-## Review standard
+## Successful and non-supportive results
 
-Changes should be small, explainable, and verifiable with synthetic inputs. Documentation should describe methods and limitations without converting method behavior into an empirical claim.
+The successful result is limited to a reproducible directional pattern under the fixed Python route. The non-supportive result is equally important: no planned factor count or smoothing choice yields a precise, stable timing contrast that can be selected as the preferred conclusion. The archived-reference comparison offers only a descriptive quality-control signal because the two methods differ and their pair-level directions do not fully agree.
+
+## What was not done
+
+The exact reference MATLAB/seqNMF workflow was not run. This repository therefore does not claim exact reproduction, numerical replication, or method equivalence. Alternative estimators and post-hoc selection of a favorable sensitivity setting are not part of the research conclusion.
+
+## Next research decision
+
+The completed result should remain bounded unless an independently justified, preregistered follow-up can test the timing question without selecting analysis settings after seeing outcomes. Public contributions are welcome for data-free code quality, tests, documentation, and review of the stated limitations.
