@@ -45,6 +45,8 @@ Contributions are welcome, especially focused improvements to data-free methods,
 ## Documentation
 
 - [Introduction for new readers](docs/INTRODUCTION.md)
+- [Extended introduction for non-neuroscientists](docs/EXTENDED_INTRODUCTION.md)
+- [Methods guide for new contributors](docs/METHODS.md)
 - [Current results and discussion](docs/CURRENT_RESULTS_AND_DISCUSSION.md)
 - [Research status and plan](docs/STATUS_AND_PLAN.md)
 - [Methods scope](docs/METHODS_SCOPE.md)
