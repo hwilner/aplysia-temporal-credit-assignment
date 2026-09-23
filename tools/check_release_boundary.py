@@ -103,7 +103,13 @@ def text_violations(path: PurePosixPath, root: Path) -> list[str]:
     if path.suffix.lower() not in TEXT_SUFFIXES:
         return []
     content = (root / path).read_text(encoding="utf-8", errors="replace")
-    return [label for label, pattern in TEXT_RULES if pattern.search(content)]
+    rules = TEXT_RULES
+    if path == PurePosixPath("docs/EXTENDED_INTRODUCTION.md"):
+        # Owner-approved exemption: docs/EXTENDED_INTRODUCTION.md is exempt from
+        # the direct-web-reference (URL) rule only; all other text rules still
+        # apply to this file.
+        rules = tuple(rule for rule in TEXT_RULES if rule[0] != "direct web reference")
+    return [label for label, pattern in rules if pattern.search(content)]
 
 
 def main() -> int:
