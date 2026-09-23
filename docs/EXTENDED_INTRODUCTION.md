@@ -252,6 +252,28 @@ The completed re-analysis produced a **directionally negative** contingent-minus
 
 All literature pointers above refer to the numbered, verified reference list in [docs/INTRODUCTION.md](INTRODUCTION.md), which is the repository's single citable source list. The entries used here are: [1] (eligibility and credit assignment on behavioral time scales), [2] (operant conditioning of the sea-slug feeding network), [3] (population recording during operant learning), [4] (dimensionality reduction for large neural recordings), [5] (the founding non-negative matrix factorization paper), [6] (factorization of neural time series into components), [8] (temporal-difference learning), and [9] (the identified-neuron studies of operant reward in this system). Per the release boundary, this document contains no external addresses or identifier links. No citations beyond that list are made in this document.
 
+## Learn more (verified links)
+
+Every link below was fetched and verified at the time of writing.
+
+**The Aplysia model system**
+- [Aplysia californica](https://en.wikipedia.org/wiki/Aplysia_californica) — introduces the sea slug with giant, identifiable neurons, explaining why its feeding network can be recorded cell by cell as described in section 1.
+
+**Operant learning and the yoked control**
+- [Operant conditioning](https://en.wikipedia.org/wiki/Operant_conditioning) — explains how actions followed by consequences are strengthened, the learning paradigm whose contingent-versus-yoked design section 2 walks through.
+
+**Temporal credit assignment**
+- [Temporal difference learning](https://en.wikipedia.org/wiki/Temporal_difference_learning) — presents the step-by-step algorithmic family that propagates credit backward from later outcomes, the formal counterpart of the fading-mark arithmetic in section 3.
+
+**Non-negative matrix factorization**
+- [Non-negative matrix factorization](https://en.wikipedia.org/wiki/Non-negative_matrix_factorization) — describes splitting a non-negative table into strength and pattern factors, the smoothie-into-ingredients decomposition worked by hand in section 4.
+
+**Medians and robust summaries**
+- [Median](https://en.wikipedia.org/wiki/Median) — defines the middle value and its resistance to outliers, why the project's peak-phase timing score uses a median instead of a mean in section 5.
+
+**Gaussian smoothing**
+- [Gaussian filter](https://en.wikipedia.org/wiki/Gaussian_filter) — explains bell-shaped weighted averaging of a signal, the same bump-adding operation `gaussian_smooth` applies to spike trains in the pipeline.
+
 ## Choosing your road
 
 If you think in step-by-step tables, take **discrete iterated maps** — a fading memory trace and a fitting loop are both one rule applied row after row. If you think in arrows and hops, take **graph theory** — credit flows backward along edges, discounted per hop. If you think in tallies, take **probability as frequencies** — credit is a gap in a 2×2 table and a median is a balanced count. If you think in tables of mixing proportions, take **linear algebra as weight tables** — factorization is two tables whose product you can check cell by cell. If you think in pictures, take **geometry** — non-negativity is a cone, and a timing shift is a walk along a segment. If you think in membership, take **set theory** — a yoked control is one changed membership, and a timing score is an inside/outside partition. If you think in incentives, take **game theory** — contingency is an action-dependent payoff table, and credit is a fair split of a shared prize. If you think in questions, take **information theory** — a summary is worth the questions it saves.
