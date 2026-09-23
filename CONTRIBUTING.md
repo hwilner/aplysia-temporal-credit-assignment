@@ -6,6 +6,10 @@ Contributions are welcome. This staging repository accepts focused, reviewable c
 
 Do not add research data, derived tables, figures, downloads, archives, external source material, access logs, notebooks, or cached artifacts. Do not add numerical results, source-specific outcome claims, release-status assertions, personal contact details, or external metadata.
 
+## Project task workflow
+
+Each atomic task is tracked by a GitHub issue and its matching Project card. When a pull request fully addresses one of those tasks, include `Fixes #<issue-number>`, `Closes #<issue-number>`, or `Resolves #<issue-number>` in the pull-request description. Use a closing keyword only for work that is genuinely complete; use ordinary discussion or a non-closing reference for proposals and partial work. This link gives reviewers a visible relationship between the change and its task, and supports the documented Project-status automation when it is enabled.
+
 ## Code and tests
 
 Keep retained utilities deterministic where practical and independent of repository data or output paths. Public callables should use Google-style docstrings and concise comments where they clarify a non-obvious implementation choice. Add or update synthetic tests for behavior changes; tests must not read local data or write into repository data, result, figure, or output paths.
