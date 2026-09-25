@@ -4,6 +4,10 @@
 >
 > Read the background sections before the project-status section. Every educational and scholarly source cited here is **general external background**, not evidence for this repository’s own result.
 
+![Concept figure: contingent versus yoked timing: only when a behavior reliably predicts its consequence can the nervous system assign credit backward in time](figures/01-concept-schematic.png)
+
+*Figure 1: Contingent versus yoked timing: only when a behavior reliably predicts its consequence can the nervous system assign credit backward in time. (Editable Mermaid source: [figures/concept_figure.md](figures/concept_figure.md).)*
+
 ## A concept ladder: from an everyday event to the project question
 
 ### 1. Begin with behavior and its consequence

@@ -79,6 +79,10 @@ def path_violations(path: PurePosixPath) -> list[str]:
     violations: list[str] = []
     if path.is_absolute() or ".." in path.parts:
         violations.append("path is not a safe relative path")
+    if path.parts[:2] == ("docs", "figures"):
+        # Owner-approved exemption: generated scientific illustrations live in
+        # docs/figures/ and are part of the public documentation.
+        return violations
     if any(part.lower() in PATH_SEGMENTS for part in path.parts):
         violations.append("path is in an excluded material directory")
     if path.suffix.lower() == ".ipynb":
