@@ -21,6 +21,23 @@ def test_spike_times_to_logical_maps_one_based_indices() -> None:
     assert logical[:, 1].nonzero()[0].tolist() == [1]
 
 
+def test_spike_times_to_logical_ignores_zero_and_nan_padding() -> None:
+    """Ignore zero and non-finite padding in a synthetic spike-index matrix."""
+    padded_times = np.array(
+        [[2.0, 0.0], [0.0, 4.0], [np.nan, np.nan]], dtype=float
+    )
+
+    logical = spike_times_to_logical(
+        padded_times, acquisition_rate_hz=10, duration_seconds=1
+    )
+
+    # Only the two valid one-based indices set true entries, at zero-based rows.
+    assert logical.shape == (10, 2)
+    assert logical[:, 0].nonzero()[0].tolist() == [1]
+    assert logical[:, 1].nonzero()[0].tolist() == [3]
+    assert int(logical.sum()) == 2
+
+
 def test_spike_times_to_logical_rejects_out_of_range_indices() -> None:
     """Reject a synthetic index that exceeds the configured duration."""
     with pytest.raises(ValueError, match="outside"):
