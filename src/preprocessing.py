@@ -55,13 +55,19 @@ def gaussian_smooth(
 ) -> np.ndarray:
     """Smooth each feature trace with a normalized finite Gaussian kernel.
 
+    The kernel is evaluated only on its finite support, from
+    ``-half_window_samples`` to ``+half_window_samples``, and is normalized
+    over that finite support so its weights sum to one.
+
     Args:
         logical_spikes: Two-dimensional time-by-feature activity matrix.
         standard_deviation_samples: Positive Gaussian standard deviation in samples.
         half_window_samples: Non-negative half-width of the kernel support.
 
     Returns:
-        Floating-point matrix with the same shape as ``logical_spikes``.
+        Floating-point matrix with the same shape as ``logical_spikes``;
+        centered trimming of the full convolution preserves the input
+        time-by-feature shape.
 
     Raises:
         ValueError: If the matrix is not two-dimensional or kernel parameters are
