@@ -36,6 +36,12 @@ class FactorizationOutcome:
 def downsample_mean(matrix: np.ndarray, factor: int = 10) -> np.ndarray:
     """Mean-downsample a time-by-feature matrix by an exact integer factor.
 
+    Consecutive, nonoverlapping windows of ``factor`` rows are averaged in time
+    order: output row ``k`` is the mean of input rows ``k * factor`` through
+    ``k * factor + factor - 1``. A time-axis length that is not divisible by
+    ``factor`` is rejected with ``ValueError``; a partial trailing window is
+    never truncated or padded to force an even division.
+
     Args:
         matrix: Two-dimensional time-by-feature numeric array.
         factor: Positive number of input rows per output row.
