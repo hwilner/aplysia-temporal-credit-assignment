@@ -38,6 +38,27 @@ def test_normalise_intervals_handles_single_and_multiple_input_forms() -> None:
     )
 
 
+def test_normalise_intervals_returns_sorted_inclusive_bins() -> None:
+    """Sort deliberately nonchronological synthetic intervals into bins.
+
+    The one-based start/end sample pairs below are supplied in an order that
+    reverses their time order so the assertion exercises the sorting step of
+    ``normalise_intervals`` rather than its validation paths. At a downsample
+    factor of ten, samples 1-10 map to bin [0, 0], samples 11-20 to bin
+    [1, 1], and samples 31-40 to bin [3, 3], so the returned rows must follow
+    the earliest start bin rather than the input order. Both limits of each
+    returned pair are inclusive zero-based bin indices, per the documented
+    contract. The fixture is fully in memory: the test reads no files and
+    creates no data, results, figures, or output paths.
+    """
+    boundaries = np.array([[31, 40], [1, 10], [11, 20]])
+
+    bins = normalise_intervals(boundaries, downsample_factor=10)
+
+    # Sorting is by the start bin; the input lists the latest interval first.
+    assert np.array_equal(bins, np.array([[0, 0], [1, 1], [3, 3]]))
+
+
 def test_interval_mask_includes_both_interval_limits() -> None:
     """Mark the complete inclusive interval in a synthetic time axis."""
     mask = interval_mask(5, np.array([[1, 3]]))
