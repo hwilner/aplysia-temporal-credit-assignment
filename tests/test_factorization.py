@@ -84,3 +84,21 @@ def test_median_peak_phase_uses_earliest_tie() -> None:
     phase = median_peak_phase(time_course, np.array([[0, 2], [3, 5]]))
 
     assert phase == 0.75
+
+
+def test_median_peak_phase_returns_zero_for_one_bin_interval() -> None:
+    """Return a zero phase for a one-bin inclusive synthetic interval.
+
+    A one-bin interval clips to exactly one sample of the supplied time
+    course, so the earliest (and only) maximal position is index zero of a
+    length-one segment; the documented contract reports that degenerate
+    position as phase 0.0 rather than dividing by a zero-length span. The
+    fixture is fully in memory: the test reads no files and creates no data,
+    results, figures, or output paths.
+    """
+    time_course = np.array([0.5, 2.0, 1.0, 3.0])
+
+    # Interval [2, 2] overlaps the course and spans exactly one bin.
+    phase = median_peak_phase(time_course, np.array([[2, 2]]))
+
+    assert phase == 0.0
